@@ -5,22 +5,22 @@ describe('Telnyx Website Test', () => {
 
   });
 
-  xit('should load the Telnyx website and check the title', () => {
+  it('should load the Telnyx website and check the title', () => {
     cy.title().should('include', 'Telnyx - Global solutions for Communications, IOT, AI, Compute and Networking');
   });
 
-  xit('should navigate to Sign Up page', () => {
+  it('should navigate to Sign Up page', () => {
       //cy.viewport(1920, 1080)
       cy.get('#header-sign-up').click();
       cy.url().should('include', '/sign-up');
   });
   
-  xit('verify that logo is clickable', () => {                                     
+  it('verify that logo is clickable', () => {                                     
     //cy.viewport(1920, 1080)
     cy.get('.c-fjNNbA').click();
   });
 
-  xit('should display the main menu buttons', () => {
+  it('should display the main menu buttons', () => {
     //cy.viewport(1920, 1080)
     const MenuButtons = [
       'a[href="/"]',
@@ -36,7 +36,7 @@ describe('Telnyx Website Test', () => {
     });
   });
 
-  xit('verify that menu buttons is clickable', () => {
+  it('verify that menu buttons is clickable', () => {
     const MenuButtons = [
       'a[href="/"]',
       '[id="radix-:Raarm:"]',
@@ -51,7 +51,7 @@ describe('Telnyx Website Test', () => {
     });
 
   });
-  xit('verify that "Products" manu is visible  ', () => {
+  it('verify that "Products" manu is visible  ', () => {
     cy.contains('Products').should('be.visible').click();
 
       cy.contains('Products').parent().click(() =>{
@@ -74,15 +74,15 @@ describe('Telnyx Website Test', () => {
      });
   });
 
-  xit('make a screenshot of the home page', () => {
+  it('make a screenshot of the home page', () => {
     cy.screenshot('homepage');
   });
 
-  xit('verify that img in "Communications" block is visible', () =>{
+  it('verify that img in "Communications" block is visible', () =>{
     cy.get('img[src*="/_next/static/media/code_terminal.17f71ccc.svg"]').should('be.visible');
   });
 
-  xit('Should have a visible footer', () => {
+  it('Should have a visible footer', () => {
     cy.get('footer').should('be.visible');
   }); 
 
